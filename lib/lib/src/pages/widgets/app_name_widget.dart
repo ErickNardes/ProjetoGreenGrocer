@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:greengrocer/src/config/custom_color.dart';
+
+class AppNameWidget extends StatelessWidget {
+    final Color? greenTileColor;
+    final double textSize;
+
+  const AppNameWidget({
+    Key? key, this.greenTileColor, this.textSize = 30,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text.rich(
+      TextSpan(
+        style:  TextStyle(
+          fontSize: textSize,
+        ),
+        children: [
+          TextSpan(
+            text: 'Green',
+            style: TextStyle(
+              color: greenTileColor ?? CustomColors.customSwatColor,
+            ),
+          ),
+          TextSpan(
+            text: 'grocer',
+            style: TextStyle(
+              color: CustomColors.customContratColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }}
